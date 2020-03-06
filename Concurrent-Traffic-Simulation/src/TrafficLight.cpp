@@ -84,6 +84,7 @@ void TrafficLight::cycleThroughPhases()
             else{
                 _currentPhase = TrafficLightPhase::red;
             }
+            cycleDuration = distr(eng);
             t1 = std::chrono::high_resolution_clock::now();
             messageQueue.send(std::move(_currentPhase)); 
         }
